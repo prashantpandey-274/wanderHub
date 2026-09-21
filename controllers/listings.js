@@ -36,6 +36,13 @@ let response = await geocodingClient.forwardGeocode({
 
    newListing.owner = req.user._id;
    newListing.geometry = response.body.features[0].geometry;
+
+
+  newListing.image={
+       url:url,
+       filename:filename
+    };
+
   let savedListing =  await newListing.save();
   console.log(savedListing);
   req.flash("success","new location added succesfully");
