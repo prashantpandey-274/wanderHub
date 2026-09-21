@@ -1,0 +1,59 @@
+<%layout("/layouts/boilerplate")%>
+<body>    
+<div class="row mt-5">
+
+    <div class="col-9 offset-1">
+         <form action="http://localhost:3000/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="listing[title]" placeholder="enter title" type="text" class="form-control" required>  
+        <div class="valid-feedback">title looks good!</div> 
+        <div class="invalid-feedback">Title is mandatory</div>
+
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+      <textarea name="listing[description]" placeholder="enter location description" rows="6" cols="70" class="form-control" required></textarea>
+      <div class="invalid-feedback">description is required</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="imageURL" class="form-label"> Upload Image</label>
+       <input name="listing[image]"  class="form-control" type="file" required >
+    </div>
+
+
+  
+
+    <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+      <input name="listing[location]" placeholder="enter location" type="text" class="form-control" required>
+      <div class="invalid-feedback">Location needed</div>
+    </div>
+     <div class="row">
+  <div class="mb-3 col-md-4">
+        <label for="price" class="form-label">Price</label>
+      <input name="listing[price]" placeholder="enter price " class="form-control" required>
+      <div class="invalid-feedback">price must be valid</div>
+    </div>
+      <div class="mb-3 col-md-8">
+        <label for="country" class="form-label">Country</label>
+        <input type="text" name="listing[country]" placeholder="enter country" class="form-control" required>
+        <div class="invalid-feedback">country must be valid</div>
+    </div>
+
+     </div>
+
+  
+   
+    <button class="btn btn-danger mb-2 addBtn">Submit</button>
+</form>
+
+    </div>
+   
+</div>
+
+
+
+</body>

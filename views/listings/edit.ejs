@@ -1,0 +1,62 @@
+<%layout("/layouts/boilerplate")%>
+    <div class="title">
+         <h3>Edit your Details</h3>
+    </div>
+   
+    <div class="row mt-5">
+
+    <div class="col-9 offset-1">
+<form action="http://localhost:3000/listings/<%=listing._id%>?_method=PUT" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
+   <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="listing[title]" placeholder="enter title" type="text" class="form-control" value="<%=listing.title%>" required> 
+              <div class="valid-feedback">title looks good!</div>
+        <div class="invalid-feedback">Title is mandatory</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+      <textarea name="listing[description]" placeholder="enter location description" rows="6" cols="70" class="form-control" required><%=listing.description%></textarea>
+            <div class="invalid-feedback">description is required</div>
+    </div>
+    <div class="mb-3" >
+        <p>original listing image:</p>
+       <img src="<%=listing.image.url%>" alt="no image found" width="300px" height="300px">
+    </div>
+
+    <div class="mb-3">
+        <label for="imageURL" class="form-label">Upload new Image</label>
+       <input name="listing[image]" placeholder="enter image URL" class="form-control" type="file">
+     
+    </div>
+
+
+  
+
+    <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+      <input name="listing[location]" placeholder="enter location" type="text" class="form-control" value="<%=listing.location%>" required >
+      <div class="invalid-feedback">Location needed</div>
+    </div>
+     <div class="row">
+  <div class="mb-3 col-md-4">
+        <label for="price" class="form-label">Price</label>
+      <input name="listing[price]" placeholder="enter price " class="form-control" type="number" value="<%=listing.price%>" required>
+         <div class="invalid-feedback">price must be valid</div>
+      
+    </div>
+      <div class="mb-3 col-md-8">
+        <label for="country" class="form-label">Country</label>
+        <input type="text" name="listing[country]" placeholder="enter country" class="form-control" value="<%=listing.country%>" required>
+           <div class="invalid-feedback">country must be valid</div>
+    </div>
+
+     </div>
+
+  
+   
+    <button class="btn btn-danger mb-2 addBtn">Submit</button>
+</form>
+</div>
+</div>
+
